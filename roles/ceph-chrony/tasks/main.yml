@@ -1,0 +1,6 @@
+---
+
+- name: install chrony
+  package: 
+    name: chrony
+    state: present
