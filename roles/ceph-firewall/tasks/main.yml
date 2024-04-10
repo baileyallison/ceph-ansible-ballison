@@ -1,0 +1,23 @@
+---
+
+- name: ensure firewalld is started
+  service:
+    name: firewalld
+    state: started
+    enabled: yes
+
+- name: open ceph monitor ports
+  firewalld:
+    zone: public
+    source: ceph-mon
+    permanent: true
+    immediate: true
+    state: enabled
+  
+- name: open ceph ports
+  firewalld:
+    zone: public
+    source: ceph
+    permanent: true
+    immediate: true
+    state: enabled

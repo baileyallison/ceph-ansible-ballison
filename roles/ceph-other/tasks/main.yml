@@ -1,0 +1,6 @@
+---
+
+- name: ensure logrotate is installed
+  package:
+    name: logrotate
+    state: present
